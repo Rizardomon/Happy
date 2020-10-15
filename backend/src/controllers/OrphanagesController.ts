@@ -3,6 +3,16 @@ import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 
 export default {
+  // Listar os orfanatos
+  async index(request: Request, response: Response) {
+    const orphanagesRepository = getRepository(Orphanage);
+
+    const orphanages = await orphanagesRepository.find();
+
+    return response.json(orphanages);
+  },
+
+  // Criar um novo orfanato
   async create(request: Request, response: Response) {
     const {
       name,
