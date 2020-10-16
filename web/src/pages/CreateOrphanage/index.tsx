@@ -1,10 +1,7 @@
 import React from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
-import L from 'leaflet';
 
 import { FiPlus } from 'react-icons/fi';
-
-import mapMarkerImg from '../../images/map-marker.svg';
 
 import AsideSmall from '../../components/AsideSmall';
 
@@ -25,13 +22,7 @@ import {
   BtnSubmit,
 } from './styles';
 
-const happyMapIcon = L.icon({
-  iconUrl: mapMarkerImg,
-
-  iconSize: [58, 68],
-  iconAnchor: [29, 68],
-  popupAnchor: [0, -60],
-});
+import mapIcon from '../../utils/mapIcon';
 
 const CreateOrphanage: React.FC = () => {
   return (
@@ -49,12 +40,12 @@ const CreateOrphanage: React.FC = () => {
               zoom={15}
             >
               <TileLayer
-                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+                url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
               />
 
               <Marker
                 interactive={false}
-                icon={happyMapIcon}
+                icon={mapIcon}
                 position={[-27.2092052, -49.6401092]}
               />
             </Map>
