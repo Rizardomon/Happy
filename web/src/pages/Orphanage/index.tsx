@@ -6,6 +6,8 @@ import L from 'leaflet';
 
 import mapMarkerImg from '../../images/map-marker.svg';
 
+import AsideSmall from '../../components/AsideSmall';
+
 import {
   Container,
   Main,
@@ -21,7 +23,6 @@ import {
   OpenOnContainer,
   WhatsBtn,
 } from './styles';
-import AsideSmall from '../../components/AsideSmall';
 
 const happyMapIcon = L.icon({
   iconUrl: mapMarkerImg,

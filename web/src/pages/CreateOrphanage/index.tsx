@@ -1,13 +1,29 @@
 import React from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
-import { useHistory } from 'react-router-dom';
 
-import { FiArrowLeft, FiPlus } from 'react-icons/fi';
+import { FiPlus } from 'react-icons/fi';
 
 import mapMarkerImg from '../../images/map-marker.svg';
 
-import { Container } from './styles';
+import AsideSmall from '../../components/AsideSmall';
+
+import {
+  Container,
+  Main,
+  FormCreateOrphanage,
+  FieldsetFirst,
+  FieldsetLegend,
+  InputBlock,
+  InputLabel,
+  Input,
+  TextArea,
+  UploadedImgContainer,
+  BtnAddImg,
+  FieldsetSecond,
+  BtnSelectWrapper,
+  BtnSubmit,
+} from './styles';
 
 const happyMapIcon = L.icon({
   iconUrl: mapMarkerImg,
@@ -18,24 +34,14 @@ const happyMapIcon = L.icon({
 });
 
 const CreateOrphanage: React.FC = () => {
-  const { goBack } = useHistory();
-
   return (
     <Container>
-      <aside>
-        <img src={mapMarkerImg} alt="Happy" />
+      <AsideSmall />
 
-        <footer>
-          <button type="button" onClick={goBack}>
-            <FiArrowLeft size={24} color="#FFF" />
-          </button>
-        </footer>
-      </aside>
-
-      <main>
-        <form className="create-orphanage-form">
-          <fieldset>
-            <legend>Dados</legend>
+      <Main>
+        <FormCreateOrphanage className="create-orphanage-form">
+          <FieldsetFirst>
+            <FieldsetLegend>Dados</FieldsetLegend>
 
             <Map
               center={[-27.2092052, -49.6401092]}
@@ -53,59 +59,59 @@ const CreateOrphanage: React.FC = () => {
               />
             </Map>
 
-            <div className="input-block">
-              <label htmlFor="name">Nome</label>
-              <input id="name" />
-            </div>
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="name">Nome</InputLabel>
+              <Input id="name" />
+            </InputBlock>
 
-            <div className="input-block">
-              <label htmlFor="about">
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="about">
                 Sobre <span>Máximo de 300 caracteres</span>
-              </label>
-              <textarea id="name" maxLength={300} />
-            </div>
+              </InputLabel>
+              <TextArea id="name" maxLength={300} />
+            </InputBlock>
 
-            <div className="input-block">
-              <label htmlFor="images">Fotos</label>
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="images">Fotos</InputLabel>
 
-              <div className="uploaded-image"></div>
+              <UploadedImgContainer className="uploaded-image"></UploadedImgContainer>
 
-              <button className="new-image">
+              <BtnAddImg className="new-image">
                 <FiPlus size={24} color="#15b6d6" />
-              </button>
-            </div>
-          </fieldset>
+              </BtnAddImg>
+            </InputBlock>
+          </FieldsetFirst>
 
-          <fieldset>
-            <legend>Visitação</legend>
+          <FieldsetSecond>
+            <FieldsetLegend>Visitação</FieldsetLegend>
 
-            <div className="input-block">
-              <label htmlFor="instructions">Instruções</label>
-              <textarea id="instructions" />
-            </div>
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="instructions">Instruções</InputLabel>
+              <TextArea id="instructions" />
+            </InputBlock>
 
-            <div className="input-block">
-              <label htmlFor="opening_hours">Nome</label>
-              <input id="opening_hours" />
-            </div>
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="opening_hours">Nome</InputLabel>
+              <Input id="opening_hours" />
+            </InputBlock>
 
-            <div className="input-block">
-              <label htmlFor="open_on_weekends">Atende fim de semana</label>
+            <InputBlock className="input-block">
+              <InputLabel htmlFor="open_on_weekends">
+                Atende fim de semana
+              </InputLabel>
 
-              <div className="button-select">
+              <BtnSelectWrapper>
                 <button type="button" className="active">
                   Sim
                 </button>
                 <button type="button">Não</button>
-              </div>
-            </div>
-          </fieldset>
+              </BtnSelectWrapper>
+            </InputBlock>
+          </FieldsetSecond>
 
-          <button className="confirm-button" type="submit">
-            Confirmar
-          </button>
-        </form>
-      </main>
+          <BtnSubmit type="submit">Confirmar</BtnSubmit>
+        </FormCreateOrphanage>
+      </Main>
     </Container>
   );
 };
