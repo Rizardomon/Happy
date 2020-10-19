@@ -181,6 +181,12 @@ export const OpenOnContainer = styled.div`
   color: #37c77f;
 `;
 
+export const DontOpenOnContainer = styled.div`
+  background: linear-gradient(154.16deg, #fdf0f5 7.85%, #ffffff 91.03%);
+  border: 1px solid #ffbcd4;
+  color: #ff669d;
+`;
+
 export const WhatsBtn = styled.button`
   margin-top: 64px;
 
