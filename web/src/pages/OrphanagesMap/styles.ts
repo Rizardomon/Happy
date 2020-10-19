@@ -41,6 +41,12 @@ export const PageMap = styled.div`
     }
   }
 
+  @media screen and (max-width: 480px) {
+    aside {
+      display: none;
+    }
+  }
+
   /* Div que fica por volta do mapa gerado */
   .leaflet-container {
     z-index: 5;

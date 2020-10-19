@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import landingImg from '../../images/landing.svg';
+import logoMobile from '../../images/logo-mobile.svg';
 
 export const Container = styled.div`
   width: 100vw;
@@ -29,12 +30,28 @@ export const ContentWrapper = styled.div`
   justify-content: space-between;
 
   background: url('${landingImg}') no-repeat 80% center;
+
+  @media screen and (max-width: 480px) {
+    background: url('${logoMobile}') no-repeat 50% 20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 `;
 
-export const LogoImg = styled.img``;
+export const LogoImg = styled.img`
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`;
 
 export const MainContent = styled.main`
   max-width: 350px;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 `;
 
 export const MainH1 = styled.h1`
@@ -65,6 +82,12 @@ export const Location = styled.div`
   strong {
     font-weight: 800;
   }
+
+  @media screen and (max-width: 480px) {
+    position: initial;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 `;
 
 export const ButtonEnterApp = styled(Link)`
@@ -85,5 +108,12 @@ export const ButtonEnterApp = styled(Link)`
 
   &:hover {
     background: #96feff;
+  }
+
+  @media screen and (max-width: 480px) {
+    position: initial;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 60px;
   }
 `;
