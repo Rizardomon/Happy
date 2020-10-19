@@ -6,6 +6,10 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   flex: 1;
+
+  @media screen and (max-width: 480px) {
+    flex: 0;
+  }
 `;
 
 export const FormCreateOrphanage = styled.form`
@@ -22,6 +26,11 @@ export const FormCreateOrphanage = styled.form`
 
   .input-block + .input-block {
     margin-top: 80px;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 100vw;
+    padding: 0;
   }
 `;
 
