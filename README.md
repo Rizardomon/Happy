@@ -7,14 +7,14 @@
 </h2>
 
 <h1 align="center">
-  <img src="./.github/assets/images/capa_happy.png" alt="Logo da Proffy" width="1000px" />
+  <img src="./.github/assets/images/hapyy-capa.png" alt="Logo da Happy" width="1000px" />
 </h1>
 
 ## 📸 Screenshots
 
 <p align="center">
   <strong>Tela Web</strong> <br />
-  <img src="./.github/assets/gifs/demo.gif" alt="Demonstração da plataforma Happy" />
+  <img src="./.github/assets/gifs/happy.gif" alt="Demonstração da plataforma Happy" />
 </p>
 
 ## 🛠 Techs
