@@ -27,6 +27,12 @@ export const FormCreateOrphanage = styled.form`
 
 export const FieldsetFirst = styled.fieldset`
   border: 0;
+
+  .leaflet-container {
+    margin-bottom: 40px;
+    border: 1px solid #d3e2e5;
+    border-radius: 20px;
+  }
 `;
 
 export const FieldsetLegend = styled.legend`
@@ -82,19 +88,33 @@ export const TextArea = styled.textarea`
   line-height: 28px;
 `;
 
-export const UploadedImgContainer = styled.div``;
+export const UploadedImgContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
 
-export const BtnAddImg = styled.button`
+  img {
+    width: 100%;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+`;
+
+export const BtnAddImg = styled.label`
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
 
-  width: 100%;
-  height: 64px;
+  height: 96px;
   background: #f5f8fa;
   border: 1px dashed #96d2f0;
   border-radius: 20px;
   cursor: pointer;
+`;
+
+export const InputAddImg = styled.input`
+  display: none;
 `;
 
 export const FieldsetSecond = styled.fieldset`
